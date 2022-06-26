@@ -1,0 +1,9 @@
+<main>
+  <div id="overlay" class="overlay hidden"></div>
+  <h1 id="winner-cover" class="winner-cover hidden">Correct!!! Refresh To Continue.</h1>
+  <app-image-hint [country]="randomCountry"></app-image-hint>
+  <div class="previous-guess-list" *ngFor="let guess of guesses; let i = index">
+      <app-previous-guess-box [guess]="guess" [index]="i"></app-previous-guess-box>
+    </div>
+  <app-guess-box (guessEvent)="addGuess($event)"></app-guess-box>
+</main>

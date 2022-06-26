@@ -1,0 +1,31 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: min-content;
+}
+
+.img-container {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.winner-cover {
+    position: absolute;
+    margin-left: auto;
+    margin-top: 300px;
+    z-index: 10;
+}
+
+.overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff5e;
+}
+
+.hidden {
+    display: none;
+}

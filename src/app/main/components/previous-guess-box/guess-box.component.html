@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="text">
+    <h3 class="guess-box">{{ guess.guess }}</h3>
+  </div>
+  <div><h3 *ngIf="guess.distance">{{ guess.distance | number : '1.0-0' }} KM</h3></div>
+  <div class="location">
+    <img
+      class="direction-img"
+      [ngStyle]="{ 'transform': 'rotate(' + guess.bearing + 'deg)' }"
+      src="./assets/arrow.png"
+    />
+  </div>
+</div>

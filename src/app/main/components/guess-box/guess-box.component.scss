@@ -1,0 +1,35 @@
+.guess-box {
+  background-color: transparent;
+  color: white;
+  border: 2px solid var(--secondary-highlight);
+  height: 40px;
+  width: 80%;
+  border-right: none;
+  font-size: 20px;
+  font-family: IBMPlexLight;
+  padding: .5rem;
+}
+
+.submit-btn {
+  width: 20%;
+  height: 40px;
+  background: var(--accent-bright);
+  border: none;
+  color: var(--accent-light);
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex !important;
+  flex-direction: row;
+  width: 100%;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 500px;
+}

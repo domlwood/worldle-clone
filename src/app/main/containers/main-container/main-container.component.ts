@@ -43,6 +43,7 @@ export class MainContainerComponent implements OnInit {
   ];
 
   randomCountry = '';
+  overlayMsg: string = ''
   currentGuess = 0;
   getCountryAttempts = 0;
   currentBearing = '';
@@ -81,17 +82,19 @@ export class MainContainerComponent implements OnInit {
   }
 
   addGuess(newGuess: string) {
-    if (this.guesses.length <= 6) {
+    if (this.currentGuess <= 6) {
       this.guesses[this.currentGuess].guess = newGuess;
+      this.checkGuess(newGuess);
+    } else {
+      this.displayMessage('All guesses used! The correct country was: ' + this.randomCountry)
     }
-    this.checkGuess(newGuess);
   }
 
   checkGuess(guess: string) {
     console.log(guess);
     const guessKey = this.getKeyByValue(countries, guess);
     if (this.randomCountry === guessKey) {
-      this.endGame()
+      this.displayMessage('Correct! Congratulations, refresh to continue')
     } else {
       this.getDistanceAndBearing(guessKey)
     }
@@ -109,7 +112,8 @@ export class MainContainerComponent implements OnInit {
     });
   }
 
-  endGame() {
+  displayMessage(message: string) {
+    this.overlayMsg = message
     this.guesses[this.currentGuess].distance = '0'
     document.getElementById('overlay')?.classList.remove('hidden')
     document.getElementById('winner-cover')?.classList.remove('hidden')

@@ -1,9 +1,3 @@
-.guess-box {
-    color: white;
-    font-family: IBMPlexLight;
-    font-size: 20px;
-}
-
 .container {
     background-color: var(--secondary);
     border: .5px solid var(--secondary-highlight);
@@ -21,7 +15,10 @@
 }
 
 .guess-box, .distance {
-    margin: 0!important;
+    color: white;
+    font-family: IBMPlexLight;
+    font-size: 20px;
+    margin: 0;
 }
 
 .direction-img {

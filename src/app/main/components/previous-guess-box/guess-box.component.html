@@ -1,8 +1,10 @@
-<div class="container">
-  <div class="text">
-    <h3 class="guess-box">{{ guess.guess }}</h3>
+<div class="wrapper">
+  <div class="container">
+    <div class="text">
+      <h3 class="guess-box">{{ guess.guess }}</h3>
+    </div>
+    <div><h3 class="distance" *ngIf="guess.distance">{{ guess.distance | number : '1.0-0' }} KM</h3></div>
   </div>
-  <div><h3 class="distance" *ngIf="guess.distance">{{ guess.distance | number : '1.0-0' }} KM</h3></div>
   <div class="location">
     <img
       *ngIf="guess.bearing"

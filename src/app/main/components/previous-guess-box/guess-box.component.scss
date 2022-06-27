@@ -1,12 +1,8 @@
 .container {
-    background-color: var(--secondary);
-    border: .5px solid var(--secondary-highlight);
-    margin: .2rem 0;
-    height: 40px;
-    width: 500px;
+    width: 100%;
+    padding-right: 1.5rem;
     display: flex;
     align-items: center;
-    padding: 0 2rem;
     justify-content: space-between;
 }
 
@@ -19,6 +15,22 @@
     font-family: IBMPlexLight;
     font-size: 20px;
     margin: 0;
+}
+
+.wrapper {
+    background-color: var(--secondary);
+    border: .5px solid var(--secondary-highlight);
+    margin: .2rem 0;
+    height: 40px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.distance {
+    display: flex;
+    justify-content: right;
 }
 
 .direction-img {

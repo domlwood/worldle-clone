@@ -1,17 +1,21 @@
-<div class="container">
-  <div class="wrapper">
+<form class="container">
+  <div class="full-width" appearance="fill">
     <input
       type="text"
       class="guess-box"
       #Guess
-      (keydown.enter)="sendGuessToParent(Guess.value)"
+      (keydown.enter)="sendGuessToParent(Guess.value); Guess.value = ''"
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
     />
-    <button
-      type="submit"
-      class="submit-btn"
-      (click)="sendGuessToParent(Guess.value)"
-    >
-      Guess
-    </button>
   </div>
-</div>
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let country of filteredCountries | async" [value]="country" (click)="sendGuessToParent(Guess.value); Guess.value = ''">
+        {{ country }}
+    </mat-option>
+  </mat-autocomplete>
+
+</form>
+

@@ -22,6 +22,7 @@ export class PreviousGuessBoxComponent implements OnInit {
     return this.guessEvent.asObservable();
   }
 
+  
   ngOnInit(): void {}
 
 

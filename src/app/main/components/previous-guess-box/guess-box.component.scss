@@ -4,11 +4,10 @@
     font-size: 20px;
 }
 
-
 .container {
     background-color: var(--secondary);
     border: .5px solid var(--secondary-highlight);
-    margin: .2rem;
+    margin: .2rem 0;
     height: 40px;
     width: 500px;
     display: flex;
@@ -19,6 +18,10 @@
 
 .hidden {
     display: none;
+}
+
+.guess-box, .distance {
+    margin: 0!important;
 }
 
 .direction-img {

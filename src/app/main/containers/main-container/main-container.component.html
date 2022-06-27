@@ -5,5 +5,5 @@
   <div class="previous-guess-list" *ngFor="let guess of guesses; let i = index">
       <app-previous-guess-box [guess]="guess" [index]="i"></app-previous-guess-box>
     </div>
-  <app-guess-box (guessEvent)="addGuess($event)"></app-guess-box>
+  <app-guess-box class="width-100" (guessEvent)="addGuess($event)"></app-guess-box>
 </main>

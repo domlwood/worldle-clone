@@ -7,6 +7,9 @@
   font-size: 20px;
   font-family: IBMPlexLight;
   padding: .5rem;
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.586);
+  }
 }
 
 .full-width {

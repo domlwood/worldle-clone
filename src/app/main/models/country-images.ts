@@ -63,7 +63,6 @@ export const countryImgCodes = [
   'GD',
   'GE',
   'GH',
-  'GL',
   'GM',
   'GN',
   'GQ',

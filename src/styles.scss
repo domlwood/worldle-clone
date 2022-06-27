@@ -1,50 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
-    font-family: IBMPlexBold;
-    src: url("./assets/fonts/IBMPlexSans-Bold.ttf");
+  font-family: IBMPlexBold;
+  src: url("./assets/fonts/IBMPlexSans-Bold.ttf");
 }
 
 @font-face {
-    font-family: IBMPlexExtraLight;
-    src: url("./assets/fonts/IBMPlexSans-ExtraLight.ttf");
+  font-family: IBMPlexExtraLight;
+  src: url("./assets/fonts/IBMPlexSans-ExtraLight.ttf");
 }
 
 @font-face {
-    font-family: IBMPlexLight;
-    src: url("./assets/fonts/IBMPlexSans-Light.ttf");
+  font-family: IBMPlexLight;
+  src: url("./assets/fonts/IBMPlexSans-Light.ttf");
 }
 
 @font-face {
-    font-family: IBMPlexMedium;
-    src: url("./assets/fonts/IBMPlexSans-Medium.ttf");
+  font-family: IBMPlexMedium;
+  src: url("./assets/fonts/IBMPlexSans-Medium.ttf");
 }
 
 @font-face {
-    font-family: IBMPlexRegular;
-    src: url("./assets/fonts/IBMPlexSans-Regular.ttf");
+  font-family: IBMPlexRegular;
+  src: url("./assets/fonts/IBMPlexSans-Regular.ttf");
 }
-
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: IBMPlexBold;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: IBMPlexBold;
 }
 
 :root {
-    --primary: #222831;
-    --secondary: #393E46;
-    --secondary-highlight: #51555b;
-    --accent-bright: #00ADB5;
-    --accent-light: #EEEEEE;
+  --primary: #222831;
+  --secondary: #393e46;
+  --secondary-highlight: #51555b;
+  --accent-bright: #00adb5;
+  --accent-light: #eeeeee;
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary);
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

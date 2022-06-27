@@ -63,7 +63,6 @@ export const countries: any = {
   GD: 'Grenada',
   GE: 'Georgia',
   GH: 'Ghana',
-  GL: 'Greenland',
   GM: 'Gambia',
   GN: 'Guinea',
   GQ: 'Equatorial Guinea',

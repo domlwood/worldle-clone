@@ -1,15 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-image-hint',
   templateUrl: './image-hint.component.html',
   styleUrls: ['./image-hint.component.scss']
 })
-export class ImageHintComponent implements OnInit {
+export class ImageHintComponent {
 @Input() country!: string;
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

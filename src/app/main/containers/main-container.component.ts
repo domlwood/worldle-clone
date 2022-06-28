@@ -1,4 +1,4 @@
-import { Guess } from './../models/guesses';
+import { Guess } from '../models/guess';
 import { countries } from '../objects/countries';
 import { GetDistanceService } from './../services/get-distance.service';
 import { Component, OnInit } from '@angular/core';
@@ -56,7 +56,6 @@ export class MainContainerComponent implements OnInit {
   async getRandomCountry() {
     this.randomIndex = Math.floor(Math.random() * countries.length);
     const random = countries[this.randomIndex].alpha2;
-    console.log(random);
     return random;
   }
 
@@ -79,7 +78,6 @@ export class MainContainerComponent implements OnInit {
   }
 
   checkGuess(guess: string) {
-    console.log(guess);
     const guessIndex = countries.findIndex((x) => x.country === guess);
     const guessAlpha = countries[guessIndex].alpha2;
     if (this.randomCountry === guessAlpha) {

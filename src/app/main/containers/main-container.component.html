@@ -1,16 +1,14 @@
 <div class="container">
-    <div class="wrapper">
-        <app-image-hint [country]="randomCountry"></app-image-hint>
-        <div *ngFor="let guess of guesses; let i = index">
-            <app-previous-guess-box [guess]="guess"></app-previous-guess-box>
-        </div>
-        <app-guess-box class="width-100" (guessEvent)="addGuess($event)"></app-guess-box>
+  <div class="wrapper">
+    <app-image-hint [country]="randomCountry"></app-image-hint>
+    <div *ngFor="let guess of guesses; let i = index">
+      <app-previous-guess-box [guess]="guess"></app-previous-guess-box>
     </div>
+    <app-guess-box (guessEvent)="addGuess($event)"></app-guess-box>
+    <app-support></app-support>
+  </div>
 
-    <div id="overlay" class="hidden">
-        <h1 id="overlay-msg" class="hidden">{{overlayMsg}}</h1>
-    </div>
+  <div id="overlay" class="hidden">
+    <h1 id="overlay-msg" class="hidden">{{ overlayMsg }}</h1>
+  </div>
 </div>
-
-
-

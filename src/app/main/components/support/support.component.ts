@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-support',
-  templateUrl: './support.component.html',
-  styleUrls: ['./support.component.scss']
+  template: `
+    <div class="container">
+      <a href="mailto:domwood76@gmail.com">🐛 report a bug</a>
+    </div>
+  `,
+  styles: [
+    `
+      .container {
+        display: flex;
+        justify-content: center;
+        & a {
+          text-decoration: underline;
+          font-style: italic;
+          color: rgb(188, 188, 188);
+          font-family: IBMPlexLight;
+        }
+      }
+    `,
+  ],
 })
-export class SupportComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class SupportComponent {
+  constructor() {}
 }

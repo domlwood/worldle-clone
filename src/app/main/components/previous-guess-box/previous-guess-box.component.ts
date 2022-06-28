@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   templateUrl: './previous-guess-box.component.html',
   styleUrls: ['./previous-guess-box.component.scss'],
 })
-export class PreviousGuessBoxComponent implements OnInit {
+export class PreviousGuessBoxComponent {
   @Input() guess: any;
   private guessEvent: BehaviorSubject<boolean>;
   constructor() {
@@ -20,9 +20,4 @@ export class PreviousGuessBoxComponent implements OnInit {
   getValue(): Observable<boolean> {
     return this.guessEvent.asObservable();
   }
-
-  
-  ngOnInit(): void {}
-
-
 }

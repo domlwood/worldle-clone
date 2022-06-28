@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PreviousGuessBoxComponent } from './guess-box.component';
+import { PreviousGuessBoxComponent } from './previous-guess-box.component';
 
 describe('GuessBoxComponent', () => {
   let component: PreviousGuessBoxComponent;

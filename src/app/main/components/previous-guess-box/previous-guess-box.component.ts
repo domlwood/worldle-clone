@@ -3,8 +3,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-previous-guess-box',
-  templateUrl: './guess-box.component.html',
-  styleUrls: ['./guess-box.component.scss'],
+  templateUrl: './previous-guess-box.component.html',
+  styleUrls: ['./previous-guess-box.component.scss'],
 })
 export class PreviousGuessBoxComponent implements OnInit {
   @Input() guess: any;

@@ -1,4 +1,4 @@
-import { MainContainerComponent } from './containers/main-container/main-container.component';
+import { MainContainerComponent } from './containers/main-container.component';
 import { MainModule } from './main.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';

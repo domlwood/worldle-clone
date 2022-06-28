@@ -1,7 +1,7 @@
+import { countries } from '../../objects/countries';
+
 import { Observable, map, startWith } from 'rxjs';
-import { allCountries } from './../../models/country-auto-complete';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-guess-box',
@@ -10,12 +10,17 @@ import { FormControl } from '@angular/forms';
 })
 export class GuessBoxComponent implements OnInit {
 @Output() guessEvent = new EventEmitter<string>()
-allCountries = allCountries;
+countriesList: any[] = [];
 filteredCountries!: Observable<string[]>;
 myControl: FormControl = new FormControl();
 
   constructor() { }
+  
   ngOnInit(): void {
+    for (let country of countries) {
+      this.countriesList.push(country.country)
+    }
+
     this.filteredCountries = this.myControl.valueChanges
     .pipe(
       startWith(''),
@@ -28,7 +33,7 @@ myControl: FormControl = new FormControl();
   }
 
   filter(val: string): string[] {
-    return this.allCountries.filter(country =>
+    return this.countriesList.filter(country =>
       country.toLowerCase().indexOf(val.toLowerCase()) === 0);
   }
 

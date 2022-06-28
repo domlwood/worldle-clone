@@ -1,9 +1,10 @@
-main {
+.container-main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: min-content;
+    height: 100vh
 }
 
 .winner-cover {
@@ -15,8 +16,8 @@ main {
 
 .overlay {
     position: absolute;
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
     background-color: #ffffff5e;
 }
 

@@ -11,13 +11,15 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
+import { SupportComponent } from './components/support/support.component';
 
 @NgModule({
   declarations: [
     MainContainerComponent,
     ImageHintComponent,
     PreviousGuessBoxComponent,
-    GuessBoxComponent
+    GuessBoxComponent,
+    SupportComponent
   ],
   imports: [
     CommonModule,

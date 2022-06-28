@@ -24,6 +24,9 @@ import { Component, OnInit } from '@angular/core';
         (guessEvent)="addGuess($event)"
       ></app-guess-box>
     </div>
+    <div>
+      <app-support></app-support>
+    </div>
   `,
   styleUrls: ['./main-container.component.scss'],
 })

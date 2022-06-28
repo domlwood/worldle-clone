@@ -4,8 +4,8 @@
       type="text"
       class="guess-box"
       placeholder="Guess a Country..."
-      #Guess
-      (keydown.enter)="sendGuessToParent(Guess.value); Guess.value = ''"
+      [(ngModel)]="guess"
+      (keydown.enter)="sendGuessToParent()"
       matInput
       [formControl]="myControl"
       [matAutocomplete]="auto"
@@ -13,7 +13,7 @@
   </div>
 
   <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let country of filteredCountries | async" [value]="country" (click)="sendGuessToParent(Guess.value); Guess.value = ''">
+    <mat-option *ngFor="let country of filteredCountries | async" [value]="country" (click)="sendGuessToParent()">
         {{ country }}
     </mat-option>
   </mat-autocomplete>

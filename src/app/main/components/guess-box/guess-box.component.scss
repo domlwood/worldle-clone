@@ -6,9 +6,29 @@
   width: 500px;
   font-size: 20px;
   font-family: IBMPlexLight;
-  padding: .5rem;
+  padding: 0.5rem;
   &::placeholder {
     color: rgba(255, 255, 255, 0.586);
+  }
+}
+
+::ng-deep {
+  &.mat-option {
+    border: 1px solid var(--accent-bright);
+    margin: .25rem;
+    background-color: var(--secondary);
+    &-text {
+      color: white;
+      font-family: IBMPlexLight;
+      font-size: 18px;
+    }
+  }
+  &.mat-autocomplete-panel {
+    margin: .5rem 0;
+    background-color: var(--primary);
+  }
+  &.mat-option.mat-selected:not(.mat-active):not(:hover) {
+    background-color: var(--primary)!important;
   }
 }
 

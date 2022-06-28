@@ -13,6 +13,7 @@ export class GuessBoxComponent implements OnInit {
 countriesList: any[] = [];
 filteredCountries!: Observable<string[]>;
 myControl: FormControl = new FormControl();
+guess!: string;
 
   constructor() { }
   
@@ -28,13 +29,13 @@ myControl: FormControl = new FormControl();
     );
 }
 
-  sendGuessToParent(value: string) {
-    this.guessEvent.emit(value)
+  sendGuessToParent() {
+    this.guessEvent.emit(this.guess)
+    this.guess = ''
   }
 
   filter(val: string): string[] {
     return this.countriesList.filter(country =>
       country.toLowerCase().indexOf(val.toLowerCase()) === 0);
   }
-
 }

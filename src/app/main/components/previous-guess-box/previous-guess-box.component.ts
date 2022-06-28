@@ -8,7 +8,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class PreviousGuessBoxComponent implements OnInit {
   @Input() guess: any;
-  @Input() index!: number;
   private guessEvent: BehaviorSubject<boolean>;
   constructor() {
     this.guessEvent = new BehaviorSubject<boolean>(false);

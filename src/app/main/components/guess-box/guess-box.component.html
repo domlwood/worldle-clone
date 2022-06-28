@@ -1,5 +1,4 @@
 <form class="container">
-  <div class="full-width" appearance="fill">
     <input
       type="text"
       class="guess-box"
@@ -10,7 +9,6 @@
       [formControl]="myControl"
       [matAutocomplete]="auto"
     />
-  </div>
 
   <mat-autocomplete #auto="matAutocomplete">
     <mat-option *ngFor="let country of filteredCountries | async" [value]="country" (click)="sendGuessToParent()">

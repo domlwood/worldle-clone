@@ -5,29 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-container',
-  template: `
-    <div class="container-main">
-      <div id="overlay" class="overlay hidden"></div>
-      <h1 id="winner-cover" class="winner-cover hidden">{{ overlayMsg }}</h1>
-      <app-image-hint [country]="randomCountry"></app-image-hint>
-      <div
-        class="previous-guess-list"
-        *ngFor="await; let guess; of: guesses; let i = index"
-      >
-        <app-previous-guess-box
-          [guess]="guess"
-          [index]="i"
-        ></app-previous-guess-box>
-      </div>
-      <app-guess-box
-        class="width-100"
-        (guessEvent)="addGuess($event)"
-      ></app-guess-box>
-    </div>
-    <div>
-      <app-support></app-support>
-    </div>
-  `,
+  templateUrl: './main-container.component.html',
   styleUrls: ['./main-container.component.scss'],
 })
 export class MainContainerComponent implements OnInit {
@@ -126,6 +104,6 @@ export class MainContainerComponent implements OnInit {
     this.overlayMsg = message;
     this.guesses[this.guessCount].distance = '0';
     document.getElementById('overlay')?.classList.remove('hidden');
-    document.getElementById('winner-cover')?.classList.remove('hidden');
+    document.getElementById('overlay-msg')?.classList.remove('hidden');
   }
 }

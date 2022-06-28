@@ -1,3 +1,13 @@
+.container {
+  display: flex !important;
+  flex-direction: row;
+  width: 100%;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .guess-box {
   background-color: transparent;
   color: white;
@@ -30,34 +40,4 @@
   &.mat-option.mat-selected:not(.mat-active):not(:hover) {
     background-color: var(--primary)!important;
   }
-}
-
-.full-width {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.submit-btn {
-  width: 20%;
-  height: 40px;
-  background: var(--accent-bright);
-  border: none;
-  color: var(--accent-light);
-  font-size: 20px;
-  text-transform: uppercase;
-}
-
-.container {
-  display: flex !important;
-  flex-direction: row;
-  width: 100%;
-  margin: 0.5rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.wrapper {
-  width: 500px;
 }

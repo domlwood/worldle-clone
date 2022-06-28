@@ -29,6 +29,11 @@
   font-family: IBMPlexBold;
 }
 
+body, html {
+    width: 100vw;
+    min-height: 100vh;
+}
+
 :root {
   --primary: #222831;
   --secondary: #393e46;

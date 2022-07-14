@@ -1,6 +1,8 @@
-import { Country } from './../models/country';
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+import { Country } from './../models/country';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,51 +13,21 @@ export class GetDistanceService {
     const guesses = [
       {
         latitude: guessDestination.latitude,
-        longitude: guessDestination.longitude
+        longitude: guessDestination.longitude,
       },
       {
         latitude: actualDestination.latitude,
-        longitude: actualDestination.longitude
-      }
+        longitude: actualDestination.longitude,
+      },
     ];
-    JSON.stringify(guesses)
-    return this.http
-      .get<{}>('https://worldle-backend.herokuapp.com/distance', {
-        headers: new HttpHeaders({
-          'authorization':
-            '5a5c3e84-3e0c-40ef-a64a-904903598cb6',
-        }),
-        params: new HttpParams({
-          fromObject: { distance: JSON.stringify(guesses) },
-        }),
-      })
-      
+    JSON.stringify(guesses);
+    return this.http.get<{}>('https://worldle-backend.herokuapp.com/distance', {
+      headers: new HttpHeaders({
+        authorization: environment.apiKey,
+      }),
+      params: new HttpParams({
+        fromObject: { distance: JSON.stringify(guesses) },
+      }),
+    });
   }
-
-//   getDistance(guessDestination: string, actualDestination: string) {
-//     const guesses = [
-//       {
-//         t: guessDestination,
-//       },
-//       {
-//         t: actualDestination,
-//       },
-//     ];
-
-//     return this.http
-//       .get<{}>('http://www.distance24.org/route.json', {
-//         params: new HttpParams().set('stops', `${guessDestination}|${actualDestination}`)
-//         ,
-//       })
-//   }
-
-
-  // getDistance(guessDestination: string, actualDestination: string) {
-  //   return this.http
-  //     .get<{}>('https://api.distancematrix.ai/maps/api/distancematrix/json', {
-  //       params: new HttpParams({
-  //         fromObject: { origins: guessDestination, destinations: actualDestination, key: 'rPjOAe0m09zfvKSdjMpwTu5asr8F9' },
-  //       }),
-  //     })
-  // }
 }

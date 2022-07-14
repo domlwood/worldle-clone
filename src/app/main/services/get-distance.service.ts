@@ -20,10 +20,11 @@ export class GetDistanceService {
         longitude: actualDestination.longitude,
       },
     ];
+    console.log(environment.apiKey)
     JSON.stringify(guesses);
     return this.http.get<{}>('https://worldle-backend.herokuapp.com/distance', {
       headers: new HttpHeaders({
-        authorization: environment.apiKey,
+        'authorization': environment.apiKey,
       }),
       params: new HttpParams({
         fromObject: { distance: JSON.stringify(guesses) },

@@ -20,7 +20,7 @@ export class GetDistanceService {
     ];
     JSON.stringify(guesses)
     return this.http
-      .get<{}>('http://localhost:8080/distance', {
+      .get<{}>('https://worldle-backend.herokuapp.com/distance', {
         params: new HttpParams({
           fromObject: { distance: JSON.stringify(guesses) },
         }),

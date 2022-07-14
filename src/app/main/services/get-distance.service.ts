@@ -1,3 +1,4 @@
+import { Country } from './../models/country';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 @Injectable({
@@ -6,24 +7,22 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 export class GetDistanceService {
   constructor(private http: HttpClient) {}
 
-  getDistance(guessDestination: string, actualDestination: string) {
+  getDistance(guessDestination: Country, actualDestination: Country) {
     const guesses = [
       {
-        t: guessDestination,
+        latitude: guessDestination.latitude,
+        longitude: guessDestination.longitude
       },
       {
-        t: actualDestination,
-      },
+        latitude: actualDestination.latitude,
+        longitude: actualDestination.longitude
+      }
     ];
-
+    JSON.stringify(guesses)
     return this.http
-      .get<{}>('https://distanceto.p.rapidapi.com/get', {
-        headers: new HttpHeaders({
-          'X-RapidAPI-Key':
-            'bd4b55f91bmshf43238f0b13faeep193717jsn464f83b16ec8',
-        }),
+      .get<{}>('http://localhost:8080/distance', {
         params: new HttpParams({
-          fromObject: { route: JSON.stringify(guesses), car: false },
+          fromObject: { distance: JSON.stringify(guesses) },
         }),
       })
       

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="wrapper">
-    <app-image-hint [country]="randomCountry"></app-image-hint>
+    <app-image-hint [country]="randomCountry.alpha2"></app-image-hint>
     <div *ngFor="let guess of guesses; let i = index">
       <app-previous-guess-box [guess]="guess"></app-previous-guess-box>
     </div>

@@ -4,7 +4,7 @@
       class="guess-box"
       placeholder="Guess a Country..."
       [(ngModel)]="guess"
-      (keydown.enter)="sendGuessToParent()"
+      (keydown.enter)="sendGuessToParent(); closePanel()"
       matInput
       [formControl]="myControl"
       [matAutocomplete]="auto"

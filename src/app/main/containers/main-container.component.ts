@@ -2,6 +2,7 @@ import { Guess } from '../models/guess';
 import { countries } from '../objects/countries';
 import { GetDistanceService } from './../services/get-distance.service';
 import { Component, OnInit } from '@angular/core';
+import { Country } from '../models/country';
 
 @Component({
   selector: 'app-main-container',
@@ -41,7 +42,7 @@ export class MainContainerComponent implements OnInit {
       distance: '',
     },
   ];
-  randomCountry: string = '';
+  randomCountry!: Country;
   randomIndex!: number;
   overlayMsg: string = '';
   guessCount: number = 0;
@@ -55,7 +56,7 @@ export class MainContainerComponent implements OnInit {
 
   async getRandomCountry() {
     this.randomIndex = Math.floor(Math.random() * countries.length);
-    const random = countries[this.randomIndex].alpha2;
+    const random = countries[this.randomIndex];
     return random;
   }
 
@@ -79,21 +80,21 @@ export class MainContainerComponent implements OnInit {
 
   checkGuess(guess: string) {
     const guessIndex = countries.findIndex((x) => x.country === guess);
-    const guessAlpha = countries[guessIndex].alpha2;
-    if (this.randomCountry === guessAlpha) {
+    const guessObject = countries[guessIndex];
+    if (this.randomCountry.alpha2 === guessObject.alpha2) {
       this.displayMessage('Correct! Congratulations, refresh to continue');
     } else {
-      this.getDistanceAndBearing(guessAlpha);
+      this.getDistanceAndBearing(guessObject);
     }
   }
 
-  getDistanceAndBearing(guessAlpha: string) {
+  getDistanceAndBearing(guessAlpha: Country) {
     this.getDistanceService
       .getDistance(guessAlpha, this.randomCountry)
       .subscribe((res: any) => {
         this.guesses[this.guessCount].distance =
-          res.steps[0].distance.haversine;
-        this.guesses[this.guessCount].bearing = res.steps[0].bearing.bearing;
+          res.distance
+        this.guesses[this.guessCount].bearing = res.bearing;
         this.guessCount = this.guessCount + 1;
       });
   }

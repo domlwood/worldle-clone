@@ -986,12 +986,6 @@ export const countries: Country[] = [
     longitude: -56,
   },
   {
-    country: 'Svalbard and Jan Mayen',
-    alpha2: 'SJ',
-    latitude: 78,
-    longitude: 20,
-  },
-  {
     country: 'Eswatini',
     alpha2: 'SZ',
     latitude: -26.5,
